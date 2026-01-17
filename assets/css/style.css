@@ -1,10 +1,10 @@
-#foto-pkl assets {
-  width: 50%;         /* foto menyesuaikan lebar kolom */
+#foto-pkl img {
+  width: 250px;         /* foto menyesuaikan lebar kolom */
   max-width: 100px;    /* batas lebar foto */
-  height: 100px;       /* tinggi tetap agar lurus rata */
+  height: 250px;       /* tinggi tetap agar lurus rata */
   object-fit: cover;   /* crop foto agar proporsinya tetap benar */
   object-position: center; /* bagian tengah foto tetap terlihat */
-  border-radius: 10px; /* sudut tetap melengkung */
+  border-radius: 15px; /* sudut tetap melengkung */
   display: block;
   margin: 0 auto;      /* foto berada di tengah kolom */
 }
