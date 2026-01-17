@@ -1,49 +1,67 @@
-/* CSS PALING AMAN – TIDAK BISA NGUMPET */
-
-html, body {
+/* RESET AMAN */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* BODY */
 body {
-  background-color: #6a0dad; /* ungu */
-  color: white;
+  background: linear-gradient(135deg, #5f2c82, #49a09d);
+  color: #ffffff;
   font-family: Arial, sans-serif;
+  padding-top: 80px;
 }
 
-/* PAKSA SEMUA ELEMEN MUNCUL */
-* {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block;
+/* NAVBAR */
+.navbar {
+  background-color: rgba(0,0,0,0.85) !important;
 }
 
-/* BOOTSTRAP FIX */
-.navbar,
-.container,
-.section,
-.hero,
-footer,
-div,
-section {
-  display: block;
-}
-
-/* BIKIN HERO TIDAK KOSONG */
+/* HERO */
 .hero {
-  padding: 120px 20px;
+  padding: 100px 20px;
   text-align: center;
+}
+
+.hero-img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+h1 {
+  font-size: 2.5rem;
+}
+
+h1 span {
+  color: #ffd369;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 0;
+}
+
+.section h2 {
+  margin-bottom: 20px;
 }
 
 /* SKILL */
 .skill-card {
-  background: rgba(255,255,255,0.2);
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  padding: 25px;
+  border-radius: 15px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-img {
-  max-width: 100%;
+.skill-card img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: rgba(0,0,0,0.85);
 }
