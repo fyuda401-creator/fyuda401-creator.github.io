@@ -3,37 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portofolio</title>
+    <title>My Portofolio - Fajar Yuda Pratama</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
          body {
             background-color: #000814;
-            background-image: radial-gradient(circle at top right, #001d3d, #000814);
             color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
+        /* Efek Tulisan Biru Menyala */
         .text-blue-glow {
             color: #00b4d8;
-            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.6), 0 0 20px rgba(0, 180, 216, 0.3);
         }
         .btn-blue {
             background: #0077b6;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-blue:hover {
+            background: #00b4d8;
+            transform: scale(1.05);
         }
         .card-dark {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(168, 85, 247, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 180, 216, 0.2);
             backdrop-filter: blur(10px);
+        }
+
+        /* --- Animasi Bintang Jatuh --- */
+        .star-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none;
+        }
+        .shooting-star {
+            position: absolute;
+            top: -10%;
+            width: 2px; height: 80px;
+            background: linear-gradient(to bottom, transparent, #00b4d8);
+            opacity: 0;
+            animation: shoot 4s linear infinite;
+        }
+        @keyframes shoot {
+            0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translateX(-400px) translateY(600px) rotate(45deg); opacity: 0; }
+            100% { opacity: 0; }
+        }
+        .s1 { left: 80%; animation-delay: 0s; }
+        .s2 { left: 40%; animation-delay: 2s; }
+        .s3 { left: 95%; animation-delay: 5s; }
+
+        /* Efek Burst Cahaya di Tengah */
+        .hero-glow {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 0;
         }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
 
-    <nav class="fixed top-0 w-full z-50 flex justify-between items-center p-6 lg:px-20 bg-[#0f051d]/80 backdrop-blur-md">
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center p-6 lg:px-20 bg-[#000814]/80 backdrop-blur-md border-b border-blue-900/20">
         <div class="text-2xl font-bold flex items-center gap-2">
-            <span class="text-purple-glow text-lg md:text-2xl">Anomali</span>
+            <span class="text-blue-glow text-lg md:text-2xl font-extrabold tracking-wider">Anomali</span>
             <i data-lucide="star" class="fill-white w-5 h-5"></i>
         </div>
         <div class="flex gap-4 md:gap-8 font-medium text-sm md:text-base">
@@ -44,63 +86,62 @@
         </div>
     </nav>
 
-   <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
-        <div class="flex gap-4 mb-8 opacity-80">
-            <div class="p-4 bg-blue-900/30 rounded-2xl border border-blue-500/30 rotate-[-10deg]">
-                <i data-lucide="code-2" class="w-10 h-10 text-blue-400"></i>
-    </div>
-
-    <div class="relative z-10">
+   <section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 overflow-hidden">
+        
+        <div class="hero-glow"></div>
+        <div class="star-container">
+            <div class="shooting-star s1"></div>
+            <div class="shooting-star s2"></div>
+            <div class="shooting-star s3"></div>
         </div>
 
-</section>
-</section>
-        <div class="flex gap-4 mb-8 opacity-80">
-            <div class="p-4 bg-blue-900/30 rounded-2xl border border-blue-500/30 rotate-[-10deg]">
-                <i data-lucide="code-2" class="w-10 h-10 text-blue-400"></i>
+        <div class="relative z-10 flex flex-col items-center" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="flex gap-4 mb-8 opacity-90">
+                <div class="p-4 bg-blue-900/20 rounded-2xl border border-blue-500/30 rotate-[-10deg] hover:rotate-0 transition-transform">
+                    <i data-lucide="code-2" class="w-10 h-10 text-blue-400"></i>
+                </div>
+                <div class="p-4 bg-blue-900/40 rounded-2xl border border-blue-400/50 mt-8 hover:scale-110 transition-transform">
+                    <i data-lucide="layout" class="w-10 h-10 text-blue-300"></i>
+                </div>
+                <div class="p-4 bg-blue-900/20 rounded-2xl border border-blue-500/30 rotate-[10deg] hover:rotate-0 transition-transform">
+                    <i data-lucide="terminal" class="w-10 h-10 text-blue-400"></i>
+                </div>
             </div>
-            <div class="p-4 bg-purple-900/30 rounded-2xl border border-blue-500/30 mt-8">
-                <i data-lucide="layout" class="w-10 h-10 text-pink-400"></i>
-            </div>
-            <div class="p-4 bg-blue-900/30 rounded-2xl border border-blue-500/30 rotate-[10deg]">
-                <i data-lucide="terminal" class="w-10 h-10 text-blue-400"></i>
+
+            <h2 class="text-xl md:text-2xl font-medium mb-4">
+                Halo semua, saya <span id="typing-text" class="text-blue-400 font-bold"></span>
+            </h2>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-blue-glow mb-8 tracking-tighter">
+                Fajar Yuda Pratama
+            </h1>
+
+            <a href="mailto:yudafajar84@gmail.com" class="btn-blue px-10 py-4 rounded-full text-lg font-bold mb-12">
+                Contact Me
+            </a>
+
+            <div class="flex gap-6">
+                <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition-all"><i data-lucide="github"></i></a>
+                <a href="https://www.instagram.com/faajar.__" target="_blank" class="p-3 border border-gray-600 rounded-full hover:border-blue-400 hover:text-blue-400 transition-all"><i data-lucide="instagram"></i></a>
+                <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition-all"><i data-lucide="linkedin"></i></a>
             </div>
         </div>
+    </section>
 
-        <h2 class="text-xl md:text-2xl font-medium mb-4 flex items-center justify-center gap-2">
-            Halo semua, saya <span class="text-2xl"></span>
-        </h2>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold text-blue-glow mb-8">
-            Fajar Yuda Pratama
-        </h1>
-
-        <a href="mailto:yudafajar840gmail.com" class="btn-blue px-10 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform mb-12">
-            Contact Me
-        </a>
-
-        <div class="flex gap-6">
-            <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"><i data-lucide="github"></i></a>
-            <a <a href="https://www.instagram.com/faajar.__?igsh=cjV0MWZ0bDhtbDRu" target="_blank" class="p-3 border border-gray-600 rounded-full hover:text-blue-400 transition">
-    <i data-lucide="instagram"></i>
-</a>
-            <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"><i data-lucide="linkedin"></i></a>
-        </div>
-        
-<section id="about" class="py-20 px-6 max-w-4xl mx-auto">
-    <div class="card-dark p-8 md:p-12 rounded-3xl relative overflow-hidden">
-        <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/20 blur-3xl rounded-full"></div>
-        
-        <div class="relative z-10 flex flex-col md:flex-row items-center gap-10">
-            <div class="text-center md:text-left">
+    <section id="about" class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+        <div class="card-dark p-8 md:p-12 rounded-3xl relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
+            
+            <div class="relative z-10 text-center md:text-left">
                 <h3 class="text-3xl font-bold mb-6 flex items-center justify-center md:justify-start gap-3">
                     <i data-lucide="user" class="text-blue-400"></i> About
                 </h3>
                 <p class="text-gray-300 leading-relaxed text-lg">
-                    Halo! Saya adalah seorang <span class="text-blue-300 font-semibold text-blue-glow">Siswa</span> yang Bercita-cita menjadi seorang Network Engineer 
+                    Halo! Saya adalah seorang <span class="text-blue-glow font-semibold">Siswa</span> yang bercita-cita menjadi seorang Network Engineer. 
                 </p>
                 <p class="mt-4 text-gray-400 leading-relaxed">
-                    Saya memiliki minat besar dalam berkarier sebagai Network Engineer dengan fokus pada konfigurasi,keamanan,dan optimasi jaringan
+                    Saya memiliki minat besar dalam berkarier sebagai Network Engineer dengan fokus pada konfigurasi, keamanan, dan optimasi jaringan.
+                </p>
                 
                 <div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-blue-900/30">
                     <div>
@@ -108,75 +149,62 @@
                         <p class="font-medium text-blue-200">Indonesia</p>
                     </div>
                     <div>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest"></p>
-                        <p class="font-medium text-blue-200"</p>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest">Status</p>
+                        <p class="font-medium text-blue-200">Siswa / Pelajar</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-        
     </section>
 
-    <section id="skills" class="py-20 px-6 max-w-4xl mx-auto">
+    <section id="skills" class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up">
         <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
             <i data-lucide="wrench" class="text-blue-400"></i> Skills
         </h3>
-        <div class="flex flex-wrap justify-center gap-4 text-center">
-            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/50">Mikrotik</span>
-            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/50">Ubuntu</span>
-            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/50">Cisco</span>
-            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/50">Debian</span>
-            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/50">Switch</span
+        <div class="flex flex-wrap justify-center gap-4">
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/30 hover:bg-blue-500/10 transition">Mikrotik</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/30 hover:bg-blue-500/10 transition">Ubuntu</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/30 hover:bg-blue-500/10 transition">Cisco</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/30 hover:bg-blue-500/10 transition">Debian</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-blue-500/30 hover:bg-blue-500/10 transition">Switching</span>
         </div>
     </section>
 
-    <section id="experience" class="py-20 px-6 max-w-4xl mx-auto">
+    <section id="experience" class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up">
         <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
             <i data-lucide="briefcase" class="text-blue-400"></i> Pengalaman PKL
         </h3>
         
-        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-blue-500 before:to-transparent">
-            
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-blue-500 bg-[#0f051d] text-blue-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                    <i data-lucide="check" class="w-5 h-5"></i>
-                </div>
-                <div class="w-[calc(100%-4rem)] md:w-[45%] card-dark p-6 rounded-xl shadow-xl">
-                    <div class="flex items-center justify-between space-x-2 mb-1">
-                        <div class="font-bold text-blue-300 text-lg">FTTH</div>
-                        <time class="text-xs font-medium text-gray-400">2025</time>
+        <div class="space-y-12">
+            <div class="card-dark p-6 md:p-8 rounded-2xl border-l-4 border-l-blue-500">
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                    <div>
+                        <h4 class="text-xl font-bold text-blue-300">FTTH (Fiber To The Home)</h4>
+                        <p class="text-gray-400">PT. Lambda Sinergi Telekomunikasi</p>
                     </div>
-                    <div class="text-gray-300 text-sm">PT. Lambda Sinergi Telekomunikasi</div<div class="w-[calc(100%-4rem)] md:w-[45%] card-dark p-6 rounded-xl shadow-xl">
-    <div class="grid grid-cols-2 gap-2 mt-4">
-    <img src="assets/2.jpeg" alt="Foto 1" class="w-full h-24 object-cover rounded-md border border-blue-500/30 hover:scale-105 transition">
-    <img src="assets/WhatsApp Image 2026-01-14 at 11.12.32.jpeg" alt="Foto 2" class="w-full h-24 object-cover rounded-md border border-blue-500/30 hover:scale-105 transition">
-    </div>
-</div>
-                    <p class="mt-2 text-gray-400 text-sm italic">FTTH( Aktivasi ke pelanggan,Menarik Kabel FO,Installasi ODP-ODC )</p>
-                    
+                    <time class="text-blue-400 font-bold mt-2 md:mt-0">2025</time>
+                </div>
+                <p class="text-gray-400 italic mb-4">Aktivasi pelanggan, Menarik Kabel FO, Installasi ODP-ODC</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="assets/2.jpeg" alt="Kerja 1" class="w-full h-32 object-cover rounded-lg border border-blue-500/20">
+                    <img src="assets/WhatsApp Image 2026-01-14 at 11.12.32.jpeg" alt="Kerja 2" class="w-full h-32 object-cover rounded-lg border border-blue-500/20">
                 </div>
             </div>
 
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-blue-500 bg-[#0f051d] text-blue-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                    <i data-lucide="check" class="w-5 h-5"></i>
-                </div>
-                <div class="w-[calc(100%-4rem)] md:w-[45%] card-dark p-6 rounded-xl shadow-xl">
-                    <div class="flex items-center justify-between space-x-2 mb-1">
-                        <div class="font-bold text-blue-300 text-lg">MONITORING DAN MAINTENANCE</div>
-                        <time class="text-xs font-medium text-gray-400">2025-2026</time>
+            <div class="card-dark p-6 md:p-8 rounded-2xl border-l-4 border-l-blue-400">
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                    <div>
+                        <h4 class="text-xl font-bold text-blue-300">Monitoring & Maintenance</h4>
+                        <p class="text-gray-400">PT. Lambda Sinergi Telekomunikasi</p>
                     </div>
-                    <div class="text-gray-300 text-sm">PT. Lambda Sinergi Telekomunikasi</div>
-                    <div class="grid grid-cols-2 gap-2 mt-4">
-    <img src="assets/6.jpeg" alt="Foto 1" class="w-full h-24 object-cover rounded-md border border-blue-500/30 hover:scale-105 transition">
-    <img src="assets/4.jpeg" alt="Foto 2" class="w-full h-24 object-cover rounded-md border border-blue-500/30 hover:scale-105 transition">
-    </div>
-                    <p class="mt-2 text-gray-400 text-sm italic">Monitoring jaringan Cacti,The dude,Smokeping,Librenms,Membalas Chat Client - Maintenance di Cyber dan IDC</p>
+                    <time class="text-blue-400 font-bold mt-2 md:mt-0">2025 - 2026</time>
+                </div>
+                <p class="text-gray-400 italic mb-4">Monitoring jaringan Cacti, The Dude, Smokeping, Maintenance di Data Center Cyber & IDC</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="assets/6.jpeg" alt="Kerja 3" class="w-full h-32 object-cover rounded-lg border border-blue-500/20">
+                    <img src="assets/4.jpeg" alt="Kerja 4" class="w-full h-32 object-cover rounded-lg border border-blue-500/20">
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -184,18 +212,22 @@
         <p class="text-gray-500 text-sm">&copy; 2026 Fajar Yuda Pratama. All rights reserved.</p>
     </footer>
 
-    <script>
-      lucide.createIcons();
-    </script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-<script>
-  var typed = new Typed('#typing-text', {
-    strings: ['Network Engineer', 'Web Developer', 'Tech Enthusiast'],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true
-  });
-</script>
+    <script>
+        // Inisialisasi Ikon
+        lucide.createIcons();
+
+        // Inisialisasi Animasi Muncul
+        AOS.init({ duration: 1000, once: true });
+
+        // Efek Mengetik
+        var typed = new Typed('#typing-text', {
+            strings: ['Siswa', 'Network Engineer', 'Tech Enthusiast'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        });
+    </script>
 </body>
-</html>  
+</html>
