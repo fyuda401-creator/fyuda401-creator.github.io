@@ -2,40 +2,6 @@ body  {
   background:  red  !important;
 }
 
-/* ===== GLOBAL ===== */
-body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #222;
-}
-
-/* ===== SEMUA SECTION ===== */
-section {
-  padding: 60px 20px;
-}
-
-/* ===== JUDUL ===== */
-h1, h2, h3, h4, h5 {
-  color: #111;
-}
-
-/* ===== CARD ===== */
-.card {
-  background: #fff;
-  border-radius: 15px;
-}
-
-/* ===== ABOUT ===== */
-#about {
-  background: #ffffff;
-  margin: 40px auto;
-  max-width: 900px;
-  border-radius: 15px;
-}
-
-/* ===== TEXT CENTER FIX ===== */
-.text-muted {
-  color: #555 !important;
-}
 
 
 
