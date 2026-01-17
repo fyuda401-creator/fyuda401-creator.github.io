@@ -1,4 +1,4 @@
-#foto-pkl img {
+#foto-pkl assets {
   width: 100%;         /* foto menyesuaikan lebar kolom */
   max-width: 300px;    /* batas lebar foto */
   height: 200px;       /* tinggi tetap agar lurus rata */
