@@ -107,3 +107,10 @@ footer {
 h1, h2, h3, h4, h5, p, a, li {
   color: white !important;
 }
+
+* {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: white !important;
+}
