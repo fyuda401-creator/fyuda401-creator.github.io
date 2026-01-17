@@ -1,7 +1,7 @@
 #foto-pkl assets {
-  width: 100%;         /* foto menyesuaikan lebar kolom */
-  max-width: 300px;    /* batas lebar foto */
-  height: 200px;       /* tinggi tetap agar lurus rata */
+  width: 50%;         /* foto menyesuaikan lebar kolom */
+  max-width: 100px;    /* batas lebar foto */
+  height: 100px;       /* tinggi tetap agar lurus rata */
   object-fit: cover;   /* crop foto agar proporsinya tetap benar */
   object-position: center; /* bagian tengah foto tetap terlihat */
   border-radius: 10px; /* sudut tetap melengkung */
