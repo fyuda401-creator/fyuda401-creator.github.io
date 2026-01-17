@@ -89,6 +89,8 @@ footer {
 /* ===== ANIMASI AMAN (TIDAK BIKIN ILANG) ===== */
 .fade {
   animation: fadeUp 0.8s ease;
+  opacity:  1;
+  transform: none;
 }
 
 @keyframes fadeUp {
@@ -100,4 +102,8 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+h1, h2, h3, h4, h5, p, a, li {
+  color: white !important;
 }
