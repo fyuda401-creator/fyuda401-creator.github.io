@@ -1,10 +1,32 @@
-body  {
-  background:  red  !important;
+/* RESET AMAN */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
 
+/* SECTION */
+section {
+  padding: 40px 20px;
+}
 
+/* ABOUT */
+#about {
+  background-color: #ffffff;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  padding: 30px;
+}
 
- 
-
-
+/* CARD */
+.card {
+  border-radius: 12px;
+}
