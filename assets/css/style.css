@@ -3,7 +3,7 @@
 /* Pengaturan foto PKL */
 #foto-pkl img {
   width: 100%;         
-  max-height: 200px;   
+  max-height: 100px;   
   object-fit: cover;   
   border-radius: 10px; 
 }
