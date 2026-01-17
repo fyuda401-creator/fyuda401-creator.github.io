@@ -1,32 +1,3 @@
-.foto-pkl img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-}
-
-
-<script>
-const elements = document.querySelectorAll('section, .card, img');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-});
-
-elements.forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(40px)";
-  el.style.transition = "0.8s";
-  observer.observe(el);
-});
-</script>
 
 body {
   background: linear-gradient(135deg, #0f172a, #020617);
