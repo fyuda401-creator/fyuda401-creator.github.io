@@ -1,94 +1,139 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio Saya</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #0f051d;
+            background-image: radial-gradient(circle at top right, #2d1b4e, #0f051d);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .text-purple-glow {
+            color: #a855f7;
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+        }
+        .btn-purple {
+            background: #a855f7;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+        .card-dark {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            backdrop-filter: blur(10px);
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen">
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">fajaryp.my.id</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center p-6 lg:px-20 bg-[#0f051d]/80 backdrop-blur-md">
+        <div class="text-2xl font-bold flex items-center gap-2">
+            <span class="text-purple-glow text-lg md:text-2xl">Portofolio</span>
+            <i data-lucide="star" class="fill-white w-5 h-5"></i>
+        </div>
+        <div class="flex gap-4 md:gap-8 font-medium text-sm md:text-base">
+            <a href="#home" class="hover:text-purple-400 transition">Home</a>
+            <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+            <a href="#experience" class="hover:text-purple-400 transition">Pengalaman</a>
+        </div>
+    </nav>
 
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skill">Skill</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+        <div class="flex gap-4 mb-8 opacity-80">
+            <div class="p-4 bg-purple-900/30 rounded-2xl border border-purple-500/30 rotate-[-10deg]">
+                <i data-lucide="code-2" class="w-10 h-10 text-purple-400"></i>
+            </div>
+            <div class="p-4 bg-purple-900/30 rounded-2xl border border-purple-500/30 mt-8">
+                <i data-lucide="layout" class="w-10 h-10 text-pink-400"></i>
+            </div>
+            <div class="p-4 bg-purple-900/30 rounded-2xl border border-purple-500/30 rotate-[10deg]">
+                <i data-lucide="terminal" class="w-10 h-10 text-blue-400"></i>
+            </div>
+        </div>
 
-<!-- HERO -->
-<section class="hero text-center">
-  <div class="container">
-    <img src="assets/linux1.png" class="hero-img fade">
+        <h2 class="text-xl md:text-2xl font-medium mb-4 flex items-center justify-center gap-2">
+            Halo semua, saya <span class="text-2xl">👋</span>
+        </h2>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold text-purple-glow mb-8">
+            Nama Anda Di Sini
+        </h1>
 
-    <p class="hello fade">Halo semua 👋</p>
-    <h1 class="fade">Fajar Yuda<br><span>Pratama</span></h1>
+        <a href="mailto:emailanda@gmail.com" class="btn-purple px-10 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform mb-12">
+            Contact Me
+        </a>
 
-    <a href="#contact" class="btn-hero fade">Contact Me</a>
-  </div>
-</section>
+        <div class="flex gap-6">
+            <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"><i data-lucide="github"></i></a>
+            <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"><i data-lucide="instagram"></i></a>
+            <a href="#" class="p-3 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"><i data-lucide="linkedin"></i></a>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about" class="container section fade">
-  <h2 class="text-center">Tentang Saya</h2>
-  <p class="text-center text-light">
-    Saya bercita-cita menjadi Network Engineer dengan fokus pada jaringan komputer,
-    server, dan Linux. Berpengalaman konfigurasi routing, switching, firewall,
-    monitoring (Cacti, The Dude, LibreNMS).
-  </p>
-</section>
+    <section id="skills" class="py-20 px-6 max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+            <i data-lucide="wrench" class="text-purple-400"></i> Skills & Tools
+        </h3>
+        <div class="flex flex-wrap justify-center gap-4 text-center">
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">HTML & CSS</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">JavaScript</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">Tailwind CSS</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">Git & GitHub</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">UI/UX Design</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">Figma</span>
+            <span class="px-6 py-3 card-dark rounded-full font-semibold border-purple-500/50">Node.js</span>
+        </div>
+    </section>
 
-<!-- SKILL -->
-<section id="skill" class="container section">
-  <h2 class="text-center fade">Skill</h2>
+    <section id="experience" class="py-20 px-6 max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+            <i data-lucide="briefcase" class="text-purple-400"></i> Pengalaman
+        </h3>
+        
+        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500 before:to-transparent">
+            
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-purple-500 bg-[#0f051d] text-purple-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <i data-lucide="check" class="w-5 h-5"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] card-dark p-6 rounded-xl shadow-xl">
+                    <div class="flex items-center justify-between space-x-2 mb-1">
+                        <div class="font-bold text-purple-300 text-lg">Web Developer Intern</div>
+                        <time class="text-xs font-medium text-gray-400">2023 - Sekarang</time>
+                    </div>
+                    <div class="text-gray-300 text-sm">PT. Teknologi Kreatif</div>
+                    <p class="mt-2 text-gray-400 text-sm italic">Membangun landing page dan mengoptimalkan performa website klien.</p>
+                </div>
+            </div>
 
-  <div class="row mt-4">
-    <div class="col-md-4 fade">
-      <div class="skill-card">
-        <img src="assets/mikrotik1.png">
-        <h5>MikroTik</h5>
-      </div>
-    </div>
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-purple-500 bg-[#0f051d] text-purple-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <i data-lucide="check" class="w-5 h-5"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] card-dark p-6 rounded-xl shadow-xl">
+                    <div class="flex items-center justify-between space-x-2 mb-1">
+                        <div class="font-bold text-purple-300 text-lg">Freelance Designer</div>
+                        <time class="text-xs font-medium text-gray-400">2022 - 2023</time>
+                    </div>
+                    <div class="text-gray-300 text-sm">Personal Project</div>
+                    <p class="mt-2 text-gray-400 text-sm italic">Mendesain lebih dari 10+ antarmuka aplikasi mobile menggunakan Figma.</p>
+                </div>
+            </div>
 
-    <div class="col-md-4 fade">
-      <div class="skill-card">
-        <img src="assets/ubuntu2.png">
-        <h5>Ubuntu</h5>
-      </div>
-    </div>
+        </div>
+    </section>
 
-    <div class="col-md-4 fade">
-      <div class="skill-card">
-        <img src="assets/linux1.png">
-        <h5>Linux</h5>
-      </div>
-    </div>
-  </div>
-</section>
+    <footer class="p-10 text-center border-t border-purple-900/30 mt-20">
+        <p class="text-gray-500 text-sm">&copy; 2024 Nama Kamu. All rights reserved.</p>
+    </footer>
 
-<!-- CONTACT -->
-<section id="contact" class="container section text-center fade">
-  <h2>Contact</h2>
-  <p>Email: <b>yudafajar840@gmail.com</b></p>
-</section>
-
-<footer class="text-center py-3">
-  © 2026 Fajar Yuda Pratama
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
 </body>
-</html>
+</html>  
