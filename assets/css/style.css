@@ -1,116 +1,58 @@
-/* ===== RESET AMAN ===== */
+/* RESET AMAN */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
-/* ===== BODY ===== */
 body {
-  background: #0b0617;
+  background: #6a0dad; /* ungu */
   color: white;
+  font-family: Arial, sans-serif;
+  padding-top: 80px;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
-  background-color: rgba(0,0,0,0.8);
+  background: #4b0082 !important;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at top, #4b1b7c, #0b0617);
+  justify-content: center;
 }
 
 .hero-img {
-  width: 160px;
-  margin-bottom: 20px;
-}
-
-.hello {
-  opacity: none;
+  width: 120px;
+  margin-bottom: 15px;
 }
 
 h1 span {
-  color: #b56cff;
+  color: #ffd700;
 }
 
-/* ===== BUTTON ===== */
-.btn-hero {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  border-radius: 30px;
-  background: #b56cff;
-  color: white;
-  text-decoration: none;
-}
-
-/* ===== SECTION ===== */
+/* SECTION */
 .section {
-  padding: 70px 0;
+  padding: 60px 0;
 }
 
-/* ===== ABOUT ===== */
-#about {
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  padding: 30px;
-}
-
-/* ===== SKILL ===== */
+/* SKILL */
 .skill-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 15px;
-  padding: 30px;
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
 }
 
 .skill-card img {
   width: 70px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-/* ===== CONTACT ===== */
-#contact {
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  padding: 30px;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
-  background: rgba(0,0,0,0.8);
-}
-
-/* ===== ANIMASI AMAN (TIDAK BIKIN ILANG) ===== */
-.fade {
-  animation: fadeUp 0.8s ease;
-  opacity:  1;
-  transform: none;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: none;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: none;
-    transform: none;
-  }
-}
-
-h1, h2, h3, h4, h5, p, a, li {
-  color: white !important;
-}
-
-* {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: white !important;
+  background: #4b0082;
 }
