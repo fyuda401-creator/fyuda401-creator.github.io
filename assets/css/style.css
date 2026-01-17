@@ -1,115 +1,49 @@
-/* RESET DASAR */
-* {
+/* CSS PALING AMAN – TIDAK BISA NGUMPET */
+
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(135deg, #5f2c82, #49a09d);
-  color: #ffffff;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  padding-top: 80px;
+  background-color: #6a0dad; /* ungu */
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
-/* NAVBAR */
-.navbar {
-  background: rgba(0,0,0,0.85) !important;
+/* PAKSA SEMUA ELEMEN MUNCUL */
+* {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block;
 }
 
-/* HERO */
+/* BOOTSTRAP FIX */
+.navbar,
+.container,
+.section,
+.hero,
+footer,
+div,
+section {
+  display: block;
+}
+
+/* BIKIN HERO TIDAK KOSONG */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  padding: 120px 20px;
   text-align: center;
-}
-
-.hero .container {
-  max-width: 700px;
-}
-
-.hero-img {
-  width: 130px;
-  margin-bottom: 20px;
-}
-
-.hello {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 span {
-  color: #ffd369;
-}
-
-/* BUTTON */
-.btn-hero {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: #ffd369;
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-}
-
-/* SECTION UMUM */
-.section {
-  padding: 80px 0;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* ABOUT */
-#about p {
-  max-width: 800px;
-  margin: auto;
-  opacity: 0.95;
 }
 
 /* SKILL */
-#skill .row {
-  justify-content: center;
-}
-
 .skill-card {
-  background: rgba(255,255,255,0.15);
-  padding: 30px 20px;
-  border-radius: 15px;
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-8px);
-}
-
-.skill-card img {
-  width: 70px;
-  margin-bottom: 15px;
-}
-
-.skill-card h5 {
-  margin: 0;
-}
-
-/* CONTACT */
-#contact p {
-  font-size: 1.1rem;
-}
-
-/* FOOTER */
-footer {
-  background: rgba(0,0,0,0.85);
+img {
+  max-width: 100%;
 }
