@@ -1,10 +1,10 @@
-/* style.css */
-
-/* Pengaturan foto PKL */
 #foto-pkl img {
-  width: 100%;         
-  max-height: 100px;   
-  object-fit: cover;   
-  border-radius: 10px; 
+  width: 100%;         /* foto menyesuaikan lebar kolom */
+  max-width: 300px;    /* batas lebar foto */
+  height: 200px;       /* tinggi tetap agar lurus rata */
+  object-fit: cover;   /* crop foto agar proporsinya tetap benar */
+  object-position: center; /* bagian tengah foto tetap terlihat */
+  border-radius: 10px; /* sudut tetap melengkung */
+  display: block;
+  margin: 0 auto;      /* foto berada di tengah kolom */
 }
-
