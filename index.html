@@ -38,23 +38,26 @@
             position: relative;
         }
 
-        /* Vector Background Animation */
-        .vector-bg-wrapper {
+        /* Latar Belakang Animasi Jaringan / Digital Grid (Tanpa Gambar Orang) */
+        .tech-bg {
             position: fixed;
-            right: 2%;
-            top: 20%;
-            width: 420px;
-            height: 420px;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: 
+                radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px),
+                radial-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px, 60px 60px;
+            background-position: 0 0, 15px 15px;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.15;
-            animation: floatCartoon 6s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px var(--accent-glow));
+            animation: gridMove 20s linear infinite;
         }
 
-        @keyframes floatCartoon {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+        @keyframes gridMove {
+            0% { background-position: 0 0, 15px 15px; }
+            100% { background-position: 30px 60px, 45px 75px; }
         }
 
         .container {
@@ -129,12 +132,12 @@
             color: var(--accent);
         }
 
-        /* Hero Section Perbaikan Font Responsif */
+        /* Hero Section */
         .hero {
             min-height: 85vh;
             display: flex;
             align-items: center;
-            padding-top: 140px; /* Jarak pas agar tidak tertutup header */
+            padding-top: 140px;
             padding-bottom: 40px;
         }
 
@@ -155,7 +158,7 @@
             line-height: 1.4;
         }
 
-        /* KOTAK EXPERIENCE */
+        /* Kotak Pengalaman */
         .experience-card {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
@@ -391,12 +394,8 @@
             100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
-        /* PENYESUAIAN KHUSUS LAYAR HP (MOBILE OPTIMIZED) */
+        /* Responsive Mobile Layout */
         @media (max-width: 768px) {
-            .vector-bg-wrapper { 
-                display: none; 
-            }
-            
             nav {
                 flex-direction: column;
                 gap: 10px;
@@ -420,7 +419,7 @@
             }
 
             .hero {
-                padding-top: 155px; /* Memberikan ruang aman di bawah menu HP */
+                padding-top: 155px;
                 min-height: auto;
             }
 
@@ -434,23 +433,8 @@
 </head>
 <body>
 
-    <!-- Vector Background -->
-    <div class="vector-bg-wrapper">
-        <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="120" y="320" width="260" height="14" rx="7" fill="#10b981"/>
-            <path d="M160 320L190 220H310L340 320H160Z" fill="#040705" stroke="#10b981" stroke-width="4"/>
-            <circle cx="250" cy="140" r="45" stroke="#10b981" stroke-width="4"/>
-            <path d="M195 140C195 110 220 85 250 85C280 85 305 110 305 140" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
-            <rect x="190" y="125" width="12" height="30" rx="6" fill="#10b981"/>
-            <rect x="298" y="125" width="12" height="30" rx="6" fill="#10b981"/>
-            <rect x="220" y="130" width="25" height="15" rx="3" stroke="#10b981" stroke-width="3"/>
-            <rect x="255" y="130" width="25" height="15" rx="3" stroke="#10b981" stroke-width="3"/>
-            <line x1="245" y1="137" x2="255" y2="137" stroke="#10b981" stroke-width="3"/>
-            <path d="M180 220C180 185 210 175 250 175C290 175 320 185 320 220" stroke="#10b981" stroke-width="4"/>
-            <text x="70" y="100" fill="#10b981" font-family="monospace" font-size="20">&lt;NOC/&gt;</text>
-            <text x="360" y="180" fill="#10b981" font-family="monospace" font-size="18">PING 0ms</text>
-        </svg>
-    </div>
+    <!-- Latar Belakang Digital Grid -->
+    <div class="tech-bg"></div>
 
     <!-- Header / Navbar -->
     <header>
