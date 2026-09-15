@@ -535,7 +535,7 @@
 
             <div class="feedback-form">
                 <!-- FORM DIINTEGRASIKAN DENGAN FORMSPREE -->
-                <form id="form-masukan" action="https://formspree.io/f/mbgjqape" method="POST">
+                <form id="contactForm" action="https://formspree.io/f/ID_FORMSPREE_ANDA" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap *</label>
                         <input type="text" id="nama" name="Nama Lengkap" class="form-input" placeholder="Masukkan nama Anda..." required>
@@ -684,24 +684,24 @@ Hasil: Semua perangkat dalam kondisi prima.`,
         });
 
         // Logika Form Masukan (Pengiriman Asynchronous ke Email via Formspree AJAX)
-        const formMasukan = document.getElementById('form-masukan');
+        const contactForm = document.getElementById('contactForm');
         const feedbackList = document.getElementById('feedback-list');
 
-        formMasukan.addEventListener('submit', async function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const nama = document.getElementById('nama').value;
             const gmail = document.getElementById('gmail').value;
             const pesan = document.getElementById('pesan').value;
-            const btnSubmit = formMasukan.querySelector('.btn-submit');
+            const btnSubmit = contactForm.querySelector('.btn-submit');
 
             btnSubmit.innerText = 'Mengirim Pesan...';
             btnSubmit.disabled = true;
 
             try {
-                const response = await fetch(formMasukan.action, {
+                const response = await fetch(contactForm.action, {
                     method: 'POST',
-                    body: new FormData(formMasukan),
+                    body: new FormData(contactForm),
                     headers: {
                         'Accept': 'application/json'
                     }
@@ -719,7 +719,7 @@ Hasil: Semua perangkat dalam kondisi prima.`,
                     `;
 
                     feedbackList.prepend(card);
-                    formMasukan.reset();
+                    contactForm.reset();
                     alert('Terima kasih! Saran & masukan Anda berhasil terkirim ke Gmail.');
                 } else {
                     alert('Gagal mengirim pesan. Silakan periksa kembali konfigurasi Formspree Anda.');
