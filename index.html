@@ -2,327 +2,49 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>NOC Portfolio | FAJAR YUDA PRATAMA</title>
-    <meta name="google-site-verification" content="pHXeb43gISU02U336P-sO9bVoU-p4FPl2kN9Jx5lsz8" />
-
-    <!-- Schema Markup JSON-LD untuk SEO Profil Profesional Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Fajar Yuda Pratama",
-      "jobTitle": "Network Operations Center Engineer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "PT Lambda Sinergi Telekomunikasi"
-      },
-      "description": "Network Operations Center (NOC) Engineer yang berfokus pada pemantauan infrastruktur jaringan, FTTH troubleshooting, dan NMS management."
-    }
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio NOC - Network Operations Center</title>
     <style>
         :root {
-            --bg-body: #090d0b;
-            --bg-card: rgba(16, 185, 129, 0.04);
-            --border-card: rgba(16, 185, 129, 0.15);
-            --text-primary: #ecfdf5;
-            --text-secondary: #9ed8c3;
-            --accent: #10b981; /* Neon Emerald Green */
-            --accent-glow: rgba(16, 185, 129, 0.35);
-            --font-main: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-mono: 'Fira Code', 'Courier New', monospace;
-            --ease: cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            outline: none;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--bg-primary);
             color: var(--text-primary);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Latar Belakang Animasi Jaringan / Digital Grid (Tanpa Gambar Orang) */
-        .tech-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: 
-                radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px),
-                radial-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px, 60px 60px;
-            background-position: 0 0, 15px 15px;
-            pointer-events: none;
-            z-index: 0;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% { background-position: 0 0, 15px 15px; }
-            100% { background-position: 30px 60px, 45px 75px; }
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .highlight {
-            color: var(--accent);
-            text-shadow: 0 0 12px var(--accent-glow);
-        }
-
-        /* Navigasi Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(9, 13, 11, 0.92);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-card);
-            z-index: 1000;
-            padding-top: max(5px, env(safe-area-inset-top));
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 70px;
-            padding: 10px 0;
-        }
-
-        .logo {
-            font-family: var(--font-mono);
-            font-size: 0.95rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-dot {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-            animation: pulse 2s infinite;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding-top: 140px;
-            padding-bottom: 40px;
-        }
-
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-            word-break: break-word;
-        }
-
-        .hero h2 {
-            font-size: clamp(1rem, 3vw, 1.4rem);
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-
-        /* Kotak Pengalaman */
-        .experience-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 12px;
             padding: 20px;
-            margin-bottom: 30px;
-            max-width: 650px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .experience-header {
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-card);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .exp-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            gap: 15px;
-        }
-
-        .exp-row:not(:last-child) {
-            border-bottom: 1px dashed rgba(16, 185, 129, 0.1);
-        }
-
-        .badge-current {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            border: 1px solid var(--accent);
-            white-space: nowrap;
-        }
-
-        .badge-pkl {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            border: 1px solid var(--border-card);
-            white-space: nowrap;
-        }
-
-        /* Section Layout */
-        section {
-            padding: 60px 0;
-        }
-
-        .section-header {
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
         .section-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 5px;
         }
 
-        .section-header .line {
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border-card);
+        .line {
+            height: 2px;
+            background-color: var(--border-color);
+            margin-bottom: 20px;
         }
 
-        /* Terminal Window */
-        .terminal-window {
-            background: #040705;
-            border: 1px solid var(--border-card);
-            border-radius: 10px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            overflow: hidden;
-            font-family: var(--font-mono);
-        }
-
-        .terminal-header {
-            background: #0d1410;
-            padding: 10px 18px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-card);
-        }
-
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .red { background: #ef4444; }
-        .yellow { background: #f59e0b; }
-        .green { background: #10b981; }
-
-        .terminal-body {
-            padding: 15px;
-            min-height: 300px;
-            max-height: 450px;
-            overflow-y: auto;
-            color: #a7f3d0;
-            font-size: 0.85rem;
-        }
-
-        .terminal-history {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-
-        .terminal-input-line {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .prompt {
-            color: var(--accent);
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .term-input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            flex-grow: 1;
-            width: 100%;
-        }
-
-        /* Form Saran & Masukan */
+        /* Form Styling */
         .feedback-form {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 12px;
-            padding: 20px;
-            max-width: 650px;
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         .form-group {
@@ -331,245 +53,170 @@
 
         .form-group label {
             display: block;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 6px;
+            margin-bottom: 5px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         .form-input, .form-textarea {
             width: 100%;
-            background: rgba(4, 7, 5, 0.7);
-            border: 1px solid var(--border-card);
-            border-radius: 6px;
-            padding: 10px 12px;
-            color: #fff;
-            font-family: var(--font-main);
-            font-size: 0.9rem;
-            transition: border-color 0.3s;
+            padding: 10px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            color: var(--text-primary);
+            box-sizing: border-box;
         }
 
         .form-input:focus, .form-textarea:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 10px var(--accent-glow);
+            outline: 1px solid var(--accent-color);
         }
 
         .btn-submit {
-            background: var(--accent);
-            color: #040705;
+            background-color: #0284c7;
+            color: white;
             border: none;
-            padding: 12px 24px;
-            font-family: var(--font-mono);
-            font-weight: 700;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
             width: 100%;
-            transition: all 0.3s var(--ease);
+            transition: background 0.2s;
         }
 
         .btn-submit:hover {
-            box-shadow: 0 0 20px var(--accent-glow);
+            background-color: #0369a1;
         }
 
+        /* Feedback Card Output */
         .feedback-list {
             margin-top: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
         }
 
         .feedback-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-card);
-            border-radius: 8px;
-            padding: 12px 15px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 12px;
         }
 
         .feedback-header {
             display: flex;
             justify-content: space-between;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--accent);
-            margin-bottom: 5px;
-            flex-wrap: wrap;
-            gap: 5px;
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 5px;
         }
 
-        /* Footer */
+        /* Terminal Styling */
+        .terminal-box {
+            background-color: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 30px;
+        }
+
+        .prompt {
+            color: #10b981;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+        }
+
+        .cli-input-container {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .cli-input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: inherit;
+            width: 100%;
+            outline: none;
+            margin-left: 8px;
+        }
+
         footer {
-            padding: 30px 0;
-            border-top: 1px solid var(--border-card);
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-
-        /* Responsive Mobile Layout */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
-                padding: 8px 0;
-            }
-
-            .nav-links {
-                gap: 6px;
-                justify-content: center;
-                width: 100%;
-                flex-wrap: wrap;
-            }
-
-            .nav-links a {
-                font-size: 0.75rem;
-                padding: 6px 10px;
-                background: rgba(16, 185, 129, 0.08);
-                border-radius: 6px;
-                border: 1px solid var(--border-card);
-                display: inline-block;
-            }
-
-            .hero {
-                padding-top: 155px;
-                min-height: auto;
-            }
-
-            .exp-row { 
-                flex-direction: column; 
-                align-items: flex-start; 
-                gap: 5px; 
-            }
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Latar Belakang Digital Grid -->
-    <div class="tech-bg"></div>
-
-    <!-- Header / Navbar -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <div class="logo-dot"></div>
-                    <span>Fajar</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#about">Profil</a></li>
-                    <li><a href="#terminal">Terminal CLI</a></li>
-                    <li><a href="#saran">Masukan & Saran</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-        <div class="container">
-            <h1>Halo, Saya <span class="highlight">FAJAR YUDA PRATAMA</span></h1>
-            <h2>Network Operations Center (NOC) Engineer</h2>
-            
-            <div class="experience-card">
-                <div class="experience-header">
-                    <span>&#9679;</span> Pengalaman @ PT. Lambda Sinergi Telekomunikasi
-                </div>
-                <div class="exp-row">
-                    <span>NOC Engineer</span>
-                    <span class="badge-current">2026 - SEKARANG</span>
-                </div>
-                <div class="exp-row">
-                    <span>PKL (Praktik Kerja Lapangan)</span>
-                    <span class="badge-pkl">2025 - 2026</span>
-                </div>
-            </div>
-
-            <p style="color: var(--text-secondary); max-width: 600px; margin-bottom: 25px; font-size: 0.9rem;">
-                Berfokus pada pemantauan sistem jaringan infrastruktur, troubleshooting FTTH, manajemen Switch, serta pengelolaan Cacti, SmokePing, dan The Dude di PT. Lambda Sinergi Telekomunikasi.
-            </p>
-        </div>
-    </section>
-
-    <!-- Interactive Terminal -->
-    <section id="terminal">
-        <div class="container">
+    <div class="container">
+        <!-- NOC Interactive Terminal -->
+        <section id="terminal-section">
             <div class="section-header">
-                <h2>Interactive Terminal CLI</h2>
+                <h2>NOC Interactive CLI</h2>
                 <div class="line"></div>
             </div>
-
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="dot red"></div>
-                    <div class="dot yellow"></div>
-                    <div class="dot green"></div>
-                    <span style="font-size:0.75rem; color:var(--text-secondary); margin-left:10px;">noc@lambda-sinergi-telecom:~#</span>
+            <div class="terminal-box" id="term-body">
+                <div id="term-history">
+                    <div>Ketik <span class="highlight">'help'</span> untuk melihat daftar perintah troubleshooting yang tersedia.</div>
                 </div>
-                <div class="terminal-body" id="term-body" onclick="document.getElementById('cli-input').focus()">
-                    <div class="terminal-history" id="term-history">
-                        Konsol Sistem<br>
-                        Ketik <span class="highlight">'help'</span> untuk melihat daftar syntax yang tersedia.<br><br>
-                    </div>
-                    <div class="terminal-input-line">
-                        <span class="prompt">noc@lambda:~#</span>
-                        <input type="text" id="cli-input" class="term-input" autocomplete="off" autofocus>
-                    </div>
+                <div class="cli-input-container">
+                    <span class="prompt">noc@lambda:~#</span>
+                    <input type="text" id="cli-input" class="cli-input" autofocus autocomplete="off">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Form Saran & Masukan dengan Formspree -->
-    <section id="saran">
-        <div class="container">
+        <!-- Form Saran & Masukan via Formspree -->
+        <section id="saran">
             <div class="section-header">
                 <h2>Kirim Saran & Masukan</h2>
                 <div class="line"></div>
             </div>
 
             <div class="feedback-form">
-                <!-- FORM DIINTEGRASIKAN DENGAN FORMSPREE -->
-                <form id="contactForm" action="https://formspree.io/f/ID_FORMSPREE_ANDA" method="POST" class="contact-form">
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap *</label>
-                        <input type="text" id="nama" name="Nama Lengkap" class="form-input" placeholder="Masukkan nama Anda..." required>
+                        <input type="text" id="nama" name="nama" class="form-input" placeholder="Masukkan nama Anda..." required>
                     </div>
                     <div class="form-group">
                         <label for="gmail">Alamat Email (Gmail) *</label>
-                        <input type="email" id="gmail" name="Email Pengirim" class="form-input" placeholder="contoh: nama@gmail.com" pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Harus menggunakan alamat @gmail.com" required>
+                        <input type="email" id="gmail" name="email" class="form-input" placeholder="contoh: nama@gmail.com" pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Harus menggunakan alamat @gmail.com" required>
                     </div>
                     <div class="form-group">
                         <label for="pesan">Pesan / Saran *</label>
-                        <textarea id="pesan" name="Pesan / Saran NOC" class="form-textarea" rows="4" placeholder="Tuliskan saran atau pesan untuk operasional NOC..." required></textarea>
+                        <textarea id="pesan" name="pesan" class="form-textarea" rows="4" placeholder="Tuliskan saran atau pesan untuk operasional NOC..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Kirim Masukan</button>
+                    <button type="submit" id="btnSubmit" class="btn-submit">Kirim Masukan</button>
                 </form>
 
                 <div class="feedback-list" id="feedback-list"></div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Network Operations Center @ FAJAR YUDA PRATAMA</p>
-        </div>
+        <p>&copy; 2026 Network Operations Center @ FAJAR YUDA PRATAMA</p>
     </footer>
 
-    <!-- JavaScript Logika Terminal & Form Masukan via AJAX -->
+    <!-- JavaScript Logika Terminal & Formspree Integration -->
     <script>
+        // --- 1. Logika Terminal CLI ---
         const cliInput = document.getElementById('cli-input');
         const termHistory = document.getElementById('term-history');
         const termBody = document.getElementById('term-body');
 
-        // Daftar Command Syntax
         const commands = {
             'help': `Daftar Syntax Tersedia:<br>
   - <span class="highlight">biodata</span> <br>
@@ -578,7 +225,7 @@
   - <span class="highlight">nms-status</span>  <br>
   - <span class="highlight">check-device</span>  <br>
   - <span class="highlight">status</span>  <br>
-  - <span class="highlight">clear</span>  `,
+  - <span class="highlight">clear</span>`,
             
             'biodata': `==============================================<br>
 <span class="highlight">DATA DIRI & SKILLS ENGINEER</span><br>
@@ -586,12 +233,7 @@
 Nama        : Fajar Yuda Pratama<br>
 Peran       : Network Operations Center (NOC)<br>
 Perusahaan  : PT. Lambda Sinergi Telekomunikasi<br>
-Riwayat     : - PKL (2025 - 2026)<br>
-              - NOC Engineer (2026 - SEKARANG)<br>
-Spesialisasi: <br>
-  1. Monitoring Tools : <span style="color:#10b981;">Cacti, SmokePing, The Dude</span><br>
-  2. FTTH         : <span style="color:#10b981;">ZTE OLT Configuration, Redaman ONU, Uncfg ONU, Reboot PON</span><br>
-  3. Switch  : <span style="color:#10b981;">Huawei VRP Command, VLAN Inspection, MAC Address Table, LLDP</span><br>
+Spesialisasi: Monitoring Tools (Cacti, SmokePing), FTTH (ZTE OLT), Switch (Huawei VRP)<br>
 ==============================================`,
 
             'ftth-troubleshoot': `==============================================<br>
@@ -600,11 +242,7 @@ Spesialisasi: <br>
 1. Cek Redaman ONU             : <span style="color:#10b981;">show pon power attenuation gpon-onu_1/1/1:1</span><br>
 2. Cek ONU Belum Terkonfigurasi: <span style="color:#10b981;">show gpon onu uncfg</span><br>
 3. Cek ONU Terdaftar di OLT   : <span style="color:#10b981;">show gpon onu state gpon-olt_1/1/1</span><br>
-4. Cek Konfigurasi ONU Spesifik: <span style="color:#10b981;">show running-config interface gpon-onu_1/1/1:1</span><br>
-5. Masuk ke Mode Konfigurasi ONU: <span style="color:#10b981;">interface gpon-onu_1/1/1:1</span><br>
-6. Cek ONU Berdasarkan Serial (SN): <span style="color:#10b981;">show gpon onu by sn RTEGC111111</span><br>
-7. Reboot ONU dari OLT         : <span style="color:#10b981;">pon-onu-mng gpon-onu_1/1/1:1 reboot</span><br>
-8. Cek Run Config Interface OLT: <span style="color:#10b981;">show run int gpon-olt_1/1/1</span><br>
+4. Reboot ONU dari OLT         : <span style="color:#10b981;">pon-onu-mng gpon-onu_1/1/1:1 reboot</span><br>
 ==============================================`,
 
             'switch-troubleshoot': `==============================================<br>
@@ -612,37 +250,23 @@ Spesialisasi: <br>
 ==============================================<br>
 1. Melihat Seluruh Konfigurasi : <span style="color:#10b981;">display current-configuration</span><br>
 2. Ringkasan Status Semua Port  : <span style="color:#10b981;">display interface brief</span><br>
-3. Melihat Keterangan/Deskripsi Port: <span style="color:#10b981;">display interface description</span><br>
-4. Status Interface IP Address  : <span style="color:#10b981;">display ip interface brief</span><br>
-5. Melihat VLAN & Mapping Port  : <span style="color:#10b981;">display vlan</span><br>
-6. Tetangga LLDP Terhubung      : <span style="color:#10b981;">display lldp neighbor brief</span><br>
-7. Tabel MAC Address            : <span style="color:#10b981;">display mac-address</span><br>
-8. Cek Config Port Tertentu     : <span style="color:#10b981;">display current-configuration interface GigabitEthernet 0/0/1</span><br>
-9. Detail Status Port Spesifik  : <span style="color:#10b981;">display interface GigabitEthernet 0/0/5</span><br>
+3. Tabel MAC Address            : <span style="color:#10b981;">display mac-address</span><br>
 ==============================================`,
 
-            'nms-status': `[STATUS NETWORK MONITORING SYSTEMS (NMS)]<br>
---------------------------------------------------<br>
-1. Cacti NMS Server    : [<span style="color:#10b981;">RUNNING</span>] RRDTool Graphing Active (Traffic & Bandwidth)<br>
-2. SmokePing Server    : [<span style="color:#10b981;">RUNNING</span>] Latency & Packet Loss Multi-Hop Tracking<br>
-3. MikroTik The Dude   : [<span style="color:#10b981;">ONLINE</span>] Real-time Topology Map & Outage Alert System<br>
---------------------------------------------------<br>
-Semua platform pemantauan berjalan normal tanpa hambatan.`,
+            'nms-status': `[STATUS NMS]<br>
+- Cacti NMS Server    : [<span style="color:#10b981;">RUNNING</span>]<br>
+- SmokePing Server    : [<span style="color:#10b981;">RUNNING</span>]<br>
+- MikroTik The Dude   : [<span style="color:#10b981;">ONLINE</span>]`,
 
-            'check-device': `[PENGECEKAN PERANGKAT JARINGAN - PT. LAMBDA]<br>
-----------------------------------------------<br>
-1. Core Router MikroTik  : [<span style="color:#10b981;">ONLINE</span>] CPU: 12% | Temp: 38°C<br>
-2. Switch Distribution    : [<span style="color:#10b981;">ONLINE</span>] Link Speed: 10Gbps<br>
-3. NMS Server (Cacti/SmokePing) : [<span style="color:#10b981;">ACTIVE</span>] SNMP Poller Running<br>
-4. OLT Fiber Backbone     : [<span style="color:#10b981;">ONLINE</span>] RX Power Normal (-19 dBm)<br>
-----------------------------------------------<br>
-Hasil: Semua perangkat dalam kondisi prima.`,
+            'check-device': `[PENGECEKAN PERANGKAT JARINGAN]<br>
+- Core Router MikroTik  : [<span style="color:#10b981;">ONLINE</span>]<br>
+- Switch Distribution    : [<span style="color:#10b981;">ONLINE</span>]<br>
+- OLT Fiber Backbone     : [<span style="color:#10b981;">ONLINE</span>]`,
 
-            'status': '[OK] Status Jaringan PT. Lambda Sinergi Telekomunikasi: NORMAL (Latency 2ms, Packet Loss 0%).',
+            'status': '[OK] Status Jaringan: NORMAL (Latency 2ms, Packet Loss 0%).',
             'clear': 'CLEAR'
         };
 
-        // Eksekusi Input Terminal
         cliInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 const inputVal = this.value.trim().toLowerCase();
@@ -660,20 +284,8 @@ Hasil: Semua perangkat dalam kondisi prima.`,
                     } else if (commands[inputVal]) {
                         responseLine.innerHTML = commands[inputVal];
                         termHistory.appendChild(responseLine);
-                    } else if (inputVal === 'ftth' || inputVal === 'olt') {
-                        responseLine.innerHTML = commands['ftth-troubleshoot'];
-                        termHistory.appendChild(responseLine);
-                    } else if (inputVal === 'switch' || inputVal === 'sw') {
-                        responseLine.innerHTML = commands['switch-troubleshoot'];
-                        termHistory.appendChild(responseLine);
-                    } else if (inputVal === 'devices') {
-                        responseLine.innerHTML = commands['check-device'];
-                        termHistory.appendChild(responseLine);
-                    } else if (inputVal === 'nms' || inputVal === 'cacti' || inputVal === 'smokeping' || inputVal === 'thedude') {
-                        responseLine.innerHTML = commands['nms-status'];
-                        termHistory.appendChild(responseLine);
                     } else {
-                        responseLine.innerHTML = `<span style="color:#ef4444;">Syntax '${inputVal}' tidak dikenali. Ketik 'help' untuk melihat daftar perintah.</span>`;
+                        responseLine.innerHTML = `<span style="color:#ef4444;">Syntax '${inputVal}' tidak dikenali. Ketik 'help' untuk petunjuk.</span>`;
                         termHistory.appendChild(responseLine);
                     }
 
@@ -683,9 +295,11 @@ Hasil: Semua perangkat dalam kondisi prima.`,
             }
         });
 
-        // Logika Form Masukan (Pengiriman Asynchronous ke Email via Formspree AJAX)
+        // --- 2. Logika Form Masukan Menggunakan Formspree ---
+        const FORMSPREE_URL = 'https://formspree.io/f/mbgjqape';
         const contactForm = document.getElementById('contactForm');
         const feedbackList = document.getElementById('feedback-list');
+        const btnSubmit = document.getElementById('btnSubmit');
 
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -693,39 +307,45 @@ Hasil: Semua perangkat dalam kondisi prima.`,
             const nama = document.getElementById('nama').value;
             const gmail = document.getElementById('gmail').value;
             const pesan = document.getElementById('pesan').value;
-            const btnSubmit = contactForm.querySelector('.btn-submit');
 
             btnSubmit.innerText = 'Mengirim Pesan...';
             btnSubmit.disabled = true;
 
+            const formData = new FormData();
+            formData.append('nama', nama);
+            formData.append('email', gmail);
+            formData.append('pesan', pesan);
+
             try {
-                const response = await fetch(contactForm.action, {
+                const response = await fetch(FORMSPREE_URL, {
                     method: 'POST',
-                    body: new FormData(contactForm),
+                    body: formData,
                     headers: {
                         'Accept': 'application/json'
                     }
                 });
 
                 if (response.ok) {
+                    // Tampilkan kartu pesan langsung ke tampilan web
                     const card = document.createElement('div');
                     card.className = 'feedback-card';
                     card.innerHTML = `
                         <div class="feedback-header">
-                            <span>${nama} (${gmail})</span>
+                            <span><strong>${nama}</strong> (${gmail})</span>
                             <span>Baru saja</span>
                         </div>
-                        <div style="color: var(--text-primary); font-size: 0.88rem;">${pesan}</div>
+                        <div style="color: var(--text-primary); font-size: 0.9rem;">${pesan}</div>
                     `;
 
                     feedbackList.prepend(card);
                     contactForm.reset();
-                    alert('Terima kasih! Saran & masukan Anda berhasil terkirim ke Gmail.');
+                    alert('Terima kasih! Pesan/Saran Anda berhasil terkirim ke Formspree.');
                 } else {
-                    alert('Gagal mengirim pesan. Silakan periksa kembali konfigurasi Formspree Anda.');
+                    alert('Gagal mengirim pesan. Silakan periksa kembali data Anda.');
                 }
+
             } catch (error) {
-                alert('Terjadi kesalahan koneksi internet.');
+                alert('Terjadi kesalahan koneksi saat mengirim pesan ke Formspree.');
             } finally {
                 btnSubmit.innerText = 'Kirim Masukan';
                 btnSubmit.disabled = false;
