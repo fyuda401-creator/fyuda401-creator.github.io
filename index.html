@@ -525,7 +525,7 @@
         </div>
     </section>
 
-    <!-- Form Saran & Masukan -->
+    <!-- Form Saran & Masukan dengan Formspree -->
     <section id="saran">
         <div class="container">
             <div class="section-header">
@@ -534,18 +534,19 @@
             </div>
 
             <div class="feedback-form">
-                <form id="form-masukan">
+                <!-- FORM DIINTEGRASIKAN DENGAN FORMSPREE -->
+                <form id="form-masukan" action="https://formspree.io/f/mbgjqape" method="POST">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap *</label>
-                        <input type="text" id="nama" class="form-input" placeholder="Masukkan nama Anda..." required>
+                        <input type="text" id="nama" name="Nama Lengkap" class="form-input" placeholder="Masukkan nama Anda..." required>
                     </div>
                     <div class="form-group">
                         <label for="gmail">Alamat Email (Gmail) *</label>
-                        <input type="email" id="gmail" class="form-input" placeholder="contoh: nama@gmail.com" pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Harus menggunakan alamat @gmail.com" required>
+                        <input type="email" id="gmail" name="Email Pengirim" class="form-input" placeholder="contoh: nama@gmail.com" pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Harus menggunakan alamat @gmail.com" required>
                     </div>
                     <div class="form-group">
                         <label for="pesan">Pesan / Saran *</label>
-                        <textarea id="pesan" class="form-textarea" rows="4" placeholder="Tuliskan saran atau pesan untuk operasional NOC..." required></textarea>
+                        <textarea id="pesan" name="Pesan / Saran NOC" class="form-textarea" rows="4" placeholder="Tuliskan saran atau pesan untuk operasional NOC..." required></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Kirim Masukan</button>
                 </form>
@@ -562,7 +563,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript Logika Terminal & Form Masukan -->
+    <!-- JavaScript Logika Terminal & Form Masukan via AJAX -->
     <script>
         const cliInput = document.getElementById('cli-input');
         const termHistory = document.getElementById('term-history');
@@ -596,7 +597,7 @@ Spesialisasi: <br>
             'ftth-troubleshoot': `==============================================<br>
 <span class="highlight">[SYNTAX TROUBLESHOOTING FTTH / OLT ZTE]</span><br>
 ==============================================<br>
-1. Cek Redaman ONU            : <span style="color:#10b981;">show pon power attenuation gpon-onu_1/1/1:1</span><br>
+1. Cek Redaman ONU             : <span style="color:#10b981;">show pon power attenuation gpon-onu_1/1/1:1</span><br>
 2. Cek ONU Belum Terkonfigurasi: <span style="color:#10b981;">show gpon onu uncfg</span><br>
 3. Cek ONU Terdaftar di OLT   : <span style="color:#10b981;">show gpon onu state gpon-olt_1/1/1</span><br>
 4. Cek Konfigurasi ONU Spesifik: <span style="color:#10b981;">show running-config interface gpon-onu_1/1/1:1</span><br>
@@ -682,30 +683,53 @@ Hasil: Semua perangkat dalam kondisi prima.`,
             }
         });
 
-        // Logika Form Masukan
+        // Logika Form Masukan (Pengiriman Asynchronous ke Email via Formspree AJAX)
         const formMasukan = document.getElementById('form-masukan');
         const feedbackList = document.getElementById('feedback-list');
 
-        formMasukan.addEventListener('submit', function(e) {
+        formMasukan.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const nama = document.getElementById('nama').value;
             const gmail = document.getElementById('gmail').value;
             const pesan = document.getElementById('pesan').value;
+            const btnSubmit = formMasukan.querySelector('.btn-submit');
 
-            const card = document.createElement('div');
-            card.className = 'feedback-card';
-            card.innerHTML = `
-                <div class="feedback-header">
-                    <span>${nama} (${gmail})</span>
-                    <span>Baru saja</span>
-                </div>
-                <div style="color: var(--text-primary); font-size: 0.88rem;">${pesan}</div>
-            `;
+            btnSubmit.innerText = 'Mengirim Pesan...';
+            btnSubmit.disabled = true;
 
-            feedbackList.prepend(card);
-            formMasukan.reset();
-            alert('Terima kasih! Saran & masukan Anda berhasil dikirim.');
+            try {
+                const response = await fetch(formMasukan.action, {
+                    method: 'POST',
+                    body: new FormData(formMasukan),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const card = document.createElement('div');
+                    card.className = 'feedback-card';
+                    card.innerHTML = `
+                        <div class="feedback-header">
+                            <span>${nama} (${gmail})</span>
+                            <span>Baru saja</span>
+                        </div>
+                        <div style="color: var(--text-primary); font-size: 0.88rem;">${pesan}</div>
+                    `;
+
+                    feedbackList.prepend(card);
+                    formMasukan.reset();
+                    alert('Terima kasih! Saran & masukan Anda berhasil terkirim ke Gmail.');
+                } else {
+                    alert('Gagal mengirim pesan. Silakan periksa kembali konfigurasi Formspree Anda.');
+                }
+            } catch (error) {
+                alert('Terjadi kesalahan koneksi internet.');
+            } finally {
+                btnSubmit.innerText = 'Kirim Masukan';
+                btnSubmit.disabled = false;
+            }
         });
     </script>
 </body>
