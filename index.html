@@ -683,59 +683,45 @@ Hasil: Semua perangkat dalam kondisi prima.`,
             }
         });
 
-       // --- 2. Logika Form Masukan Menggunakan Formspree ---
-        const FORMSPREE_URL = 'https://formspree.io/f/mbgjqape';
-        const contactForm = document.getElementById('contactForm');
-        const feedbackList = document.getElementById('feedback-list');
-        const btnSubmit = document.getElementById('btnSubmit');
+      // --- 2. Logika Form Masukan Menggunakan Formspree ---
+const FORMSPREE_URL = 'https://formspree.io/f/mbgjqape';
+const contactForm = document.getElementById('contactForm');
+const feedbackList = document.getElementById('feedback-list');
+const btnSubmit = contactForm.querySelector('.btn-submit');
 
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const nama = document.getElementById('nama').value;
-            const gmail = document.getElementById('gmail').value;
-            const pesan = document.getElementById('pesan').value;
-            const btnSubmit = contactForm.querySelector('.btn-submit');
+    const nama = document.getElementById('nama').value;
+    const gmail = document.getElementById('gmail').value;
+    const pesan = document.getElementById('pesan').value;
 
-            btnSubmit.innerText = 'Mengirim Pesan...';
-            btnSubmit.disabled = true;
+    btnSubmit.innerText = 'Mengirim Pesan...';
+    btnSubmit.disabled = true;
 
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: new FormData(contactForm),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    const card = document.createElement('div');
-                    card.className = 'feedback-card';
-                    card.innerHTML = `
-                        <div class="feedback-header">
-                            <span>${nama} (${gmail})</span>
-                            <span>Baru saja</span>
-                        </div>
-                        <div style="color: var(--text-primary); font-size: 0.88rem;">${pesan}</div>
-                    `;
-
-                    feedbackList.prepend(card);
-                    contactForm.reset();
-                    alert('Terima kasih! Saran & masukan Anda berhasil terkirim ke email.');
-                } else {
-                    alert('Gagal mengirim pesan. Silakan periksa kembali endpoint Formspree Anda.');
-                }
-            } catch (error) {
-                alert('Terjadi kesalahan koneksi internet.');
-            } finally {
-                btnSubmit.innerText = 'Kirim Masukan';
-                btnSubmit.disabled = false;
+    try {
+        const response = await fetch(FORMSPREE_URL, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+                'Accept': 'application/json'
             }
         });
+
+        if (response.ok) {
+            // Logika ketika pesan berhasil dikirim
+            contactForm.reset();
+            alert('Pesan berhasil terkirim!');
+        } else {
+            alert('Gagal mengirim pesan.');
+        }
+    } catch (error) {
+        alert('Terjadi kesalahan koneksi.');
+    } finally {
+        btnSubmit.innerText = 'Kirim Masukan';
+        btnSubmit.disabled = false;
+    }
+});
     </script>
 </body>
 </html>
